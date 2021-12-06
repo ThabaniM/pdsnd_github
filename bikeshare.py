@@ -47,17 +47,11 @@ def get_filters():
         if day in days_of_week:
             break
         
-      
-
     if city == '' or month == ''  or day == '':
         raise Exception('There is at least one missing value please try again')
     elif re.findall('\d', city) != [] or re.findall('\d', month) != []  or re.findall('\d', day) != []:
         raise Exception('A number value was entered, please enter values in words')
-        
-    
-    
-      
-                    
+                      
     print('-'*40)
     return city, month, day
 
@@ -111,7 +105,6 @@ def time_stats(df):
     df['month'] = df['Start Time'].dt.month
     popular_month = df['month'].mode()[0]
     
-  
     print(popular_month, ' NB print statement worked')
     
     # TO DO: display the most common day of week
@@ -124,7 +117,6 @@ def time_stats(df):
     print(df.head())    
     print('Most Frequent Start Hour:', popular_hour)
 
-   
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
